@@ -1,0 +1,109 @@
+"use client";
+
+import { motion } from "motion/react";
+
+export function SobreDario() {
+  return (
+    <section
+      id="historia"
+      className="relative border-t border-white/5 bg-[#0A0A0F] py-24 md:py-32"
+    >
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-14 px-6 md:grid-cols-12 md:gap-16">
+        <div className="md:col-span-5">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
+          >
+            <div className="relative overflow-hidden rounded-3xl border border-white/[0.07] bg-white/[0.02] p-10 backdrop-blur-sm">
+              <div className="absolute -left-20 -top-20 h-60 w-60 rounded-full bg-[#4FD1FF]/[0.08] blur-3xl" />
+              <div className="absolute -bottom-16 -right-16 h-48 w-48 rounded-full bg-[#FF6B35]/[0.06] blur-3xl" />
+
+              <div className="relative flex aspect-square items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/img/logo.png"
+                  alt="DW Aguas - logotipo oficial"
+                  className="h-auto w-full max-w-[300px] object-contain drop-shadow-[0_0_50px_rgba(79,209,255,0.35)]"
+                />
+              </div>
+
+              <div className="absolute right-5 top-5 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-[#0A0A0F]/80 px-2.5 py-1 backdrop-blur">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#4FD1FF]" />
+                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/70">Desde 2003</span>
+              </div>
+            </div>
+
+            <div className="mt-3 grid grid-cols-3 gap-3">
+              {[["20+", "años"], ["500+", "obras"], ["NA", "cobertura"]].map(([n, l]) => (
+                <div key={l} className="rounded-2xl border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-center">
+                  <div className="font-newsreader text-2xl text-white">{n}</div>
+                  <div className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.18em] text-white/50">{l}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Foto del equipo real DW */}
+            <div className="mt-3 relative overflow-hidden rounded-2xl border border-white/[0.07]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/img/productos/puna-litio-equipo.jpg"
+                alt="Equipo de DW Aguas en puesta en marcha — mina de litio en la Puna"
+                className="h-auto w-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0A0A0F] via-[#0A0A0F]/60 to-transparent p-3">
+                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#4FD1FF]/85">El equipo</p>
+                <p className="text-[12px] text-white/85 mt-0.5">Puesta en marcha · mina de litio · Puna</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="md:col-span-7 md:pt-10"
+        >
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-white/55">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#FF6B35]" />
+            La historia detras
+          </div>
+
+          <h2 className="font-newsreader text-4xl font-medium leading-[1.05] tracking-tight text-white md:text-5xl">
+            DW Aguas es el oficio de Dario,
+            <br />
+            <span className="text-white/50 italic">trasladado a fierro y agua.</span>
+          </h2>
+
+          <div className="mt-8 space-y-5 text-[16px] leading-relaxed text-white/70">
+            <p>En <span className="text-white">DW Aguas</span> se fabrican equipos a medida de cada cliente, bajo dirección de Dario.</p>
+            <p>Dario Domínguez comenzó en el rubro hace más de 20 años. Hoy DW Aguas diseña, construye e instala equipos de tratamiento de agua propios — desde un filtro bajo mesada en una casa hasta una planta potabilizadora completa.</p>
+            <p>No tercerizamos. Cada equipo lo armamos en taller, lo probamos, y lo mantenemos durante toda su vida útil. Esa es la diferencia.</p>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {[
+              { t: "Servicio integral",   d: "Desde el cálculo hasta el mantenimiento mensual." },
+              { t: "Cobertura nacional",  d: "Salimos a obra a todo el país desde Córdoba." },
+            ].map((p) => (
+              <div key={p.t} className="rounded-2xl border border-white/[0.07] bg-white/[0.015] p-4">
+                <div className="mb-2 h-7 w-7 rounded-lg border border-[#4FD1FF]/25 bg-[#4FD1FF]/[0.06] p-1.5">
+                  <svg viewBox="0 0 24 24" fill="none" className="h-full w-full">
+                    <path d="M5 13L9 17L19 7" stroke="#4FD1FF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <div className="text-[14px] font-medium text-white">{p.t}</div>
+                <div className="mt-1 text-[12.5px] leading-relaxed text-white/55">{p.d}</div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

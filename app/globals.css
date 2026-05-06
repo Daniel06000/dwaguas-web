@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-void: #0A0A0F;
+  --color-void-deep: #050507;
+  --color-ink: #14141B;
+  --color-paper: #FAFAF7;
+  --color-paper-warm: #F4F1EA;
+  --color-milk: #F0F4F8;
+  --color-stone: #9DA8B8;
+  --color-stone-warm: #6B6359;
+  --color-aqua: #4FD1FF;
+  --color-aqua-deep: #0EA5E9;
+  --color-ember: #FF6B35;
+  --color-gold: #E8C16C;
+  --color-success: #10B981;
+
+  --font-sans: var(--font-sans-inter, 'Inter'), -apple-system, sans-serif;
+  --font-mono: var(--font-mono-jb, 'JetBrains Mono'), monospace;
+  --font-display: var(--font-sans-inter, 'Inter'), sans-serif;
+  --font-serif: var(--font-newsreader, 'Newsreader'), 'Times New Roman', serif;
+  --font-fraunces: var(--font-fraunces, 'Fraunces'), serif;
+
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-pulse-wa: pulse-wa 2.5s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  to { transform: translate3d(-33.333%, 0, 0); }
+}
+@keyframes pulse-wa {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+  60% { box-shadow: 0 0 0 25px rgba(37,211,102,0); }
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    background: var(--color-void);
+    color: var(--color-milk);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--color-aqua); color: var(--color-void); }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
